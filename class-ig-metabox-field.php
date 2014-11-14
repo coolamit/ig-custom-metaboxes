@@ -4,6 +4,7 @@ abstract class iG_Metabox_Field {
 
 	protected $_field = array(
 		'type'     => 'text',
+		'value'    => '',
 		'required' => false,
 		'readonly' => false,
 		'disabled' => false,
@@ -36,8 +37,6 @@ abstract class iG_Metabox_Field {
 		$this->_field['id'] = $id;
 		$this->_field['name'] = $id;
 		$this->_field['label'] = $label;
-
-		$this->_render['callback'] = array( $this, '_render_input_field' );
 
 		$this->_sub_init();
 	}
@@ -201,62 +200,6 @@ abstract class iG_Metabox_Field {
 		update_post_meta( $post_id, $this->get_id(), $data );
 
 		return true;
-	}
-
-	protected function _render_input_field( $post_id = 0 ) {
-//		if ( empty( $field ) ) {
-//			throw new ErrorException( 'Field attributes not defined' );
-//		}
-
-		$post_id = intval( $post_id );
-
-		if ( empty( $this->_field['value'] ) && $post_id > 0 ) {
-			$this->_field['value'] = $this->get_data( $post_id );
-
-			if ( empty( $this->_field['value'] ) && ! is_null( $this->_default_value ) ) {
-				$this->_field['value'] = $this->_default_value;
-			}
-		}
-
-		$html = '';
-
-		if ( ! empty( $this->_field['label'] ) ) {
-			$html .= sprintf( '<label for="%s"><strong>%s</strong></label><br>', esc_attr( $this->_field['id'] ), esc_attr( $this->_field['label'] ) );
-			unset( $this->_field['label'] );
-		}
-
-		if ( ! empty( $this->_field['description'] ) ) {
-			$description = $this->_field['description'];
-			unset( $this->_field['description'] );
-		}
-
-		$html .= '<input';
-
-		if ( $this->_field['required'] === true ) {
-			$status = ' required';
-		} elseif ( $this->_field['readonly'] === true ) {
-			$status = ' readonly';
-		} elseif ( $this->_field['disabled'] === true ) {
-			$status = ' disabled';
-		}
-
-		unset( $this->_field['required'], $this->_field['readonly'], $this->_field['disabled'] );
-
-		foreach ( $this->_field as $attribute => $value ) {
-			$html .= sprintf( ' %s="%s"', $attribute, esc_attr( $value ) );
-		}
-
-		if ( ! empty( $status ) ) {
-			$html .= ' ' . $status;
-		}
-
-		$html .= '>';
-
-		if ( ! empty( $description ) ) {
-			$html .= sprintf( '<br><span class="description">%s</span>', wp_kses_post( $description ) );
-		}
-
-		return $html;
 	}
 
 }	//end class
