@@ -44,10 +44,12 @@ class iG_Metabox_Text_Field extends iG_Metabox_Field {
 			$this->_field['value'] = $this->_default_value;
 		}
 
-		$html = '';
+		$label = '';
+		$description = '';
+		$status = '';
 
 		if ( ! empty( $this->_field['label'] ) ) {
-			$html .= sprintf( '<label for="%s"><strong>%s</strong></label><br>', esc_attr( $this->_field['id'] ), wp_kses_post( $this->_field['label'] ) );
+			$label = $this->_field['label'];
 			unset( $this->_field['label'] );
 		}
 
@@ -55,8 +57,6 @@ class iG_Metabox_Text_Field extends iG_Metabox_Field {
 			$description = $this->_field['description'];
 			unset( $this->_field['description'] );
 		}
-
-		$html .= '<input';
 
 		if ( $this->_field['required'] === true ) {
 			$status = ' required';
@@ -68,21 +68,12 @@ class iG_Metabox_Text_Field extends iG_Metabox_Field {
 
 		unset( $this->_field['required'], $this->_field['readonly'], $this->_field['disabled'] );
 
-		foreach ( $this->_field as $attribute => $value ) {
-			$html .= sprintf( ' %s="%s"', $attribute, esc_attr( $value ) );
-		}
-
-		if ( ! empty( $status ) ) {
-			$html .= ' ' . $status;
-		}
-
-		$html .= '>';
-
-		if ( ! empty( $description ) ) {
-			$html .= sprintf( '<br><span class="description">%s</span>', wp_kses_post( $description ) );
-		}
-
-		return $html;
+		return iG_Metabox_Helper::render_template( __DIR__ . '/templates/field-ui/input.php', array(
+			'attributes'   => $this->_field,
+			'label'        => $label,
+			'description'  => $description,
+			'status'       => $status,
+		) );
 	}
 
 }	//end of class
