@@ -30,6 +30,7 @@ function ig_custom_metaboxes_loader() {
 	require_once __DIR__ . '/class-ig-metabox-color-field.php';
 	require_once __DIR__ . '/class-ig-metabox-date-field.php';
 	require_once __DIR__ . '/class-ig-metabox-date-time-field.php';
+	require_once __DIR__ . '/class-ig-metabox-select-field.php';
 }
 
 ig_custom_metaboxes_loader();
