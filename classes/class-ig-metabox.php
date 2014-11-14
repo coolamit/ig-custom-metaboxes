@@ -205,11 +205,15 @@ class iG_Metabox {
 		}
 
 		foreach ( $this->_fields as $field_id => $field ) {
-			if ( ! isset( $_POST[ $field_id ] ) ) {
-				continue;
+			$data = '';
+
+			if ( isset( $_POST[ $field_id ] ) ) {
+				$data = $_POST[ $field_id ];
 			}
 
-			$field->save_data( $post_id, $_POST[ $field_id ] );
+			$field->save_data( $post_id, $data );
+
+			unset( $data );
 		}
 	}
 

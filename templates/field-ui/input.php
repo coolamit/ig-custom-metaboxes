@@ -10,7 +10,13 @@ $attributes['id'] = 'ig-cmf-' . $attributes['id'];
 	<label for="<?php echo esc_attr( $attributes['id'] ); ?>">
 		<strong><?php echo wp_kses_post( $label ); ?></strong>
 	</label>
-	<br>
+<?php
+if ( $attributes['type'] == 'checkbox' ) {
+	echo '&nbsp;&nbsp;';
+} else {
+	echo '<br>';
+}
+?>
 	<input
 <?php
 	foreach ( $attributes as $attribute => $value ) {

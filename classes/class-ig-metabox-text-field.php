@@ -29,6 +29,16 @@ class iG_Metabox_Text_Field extends iG_Metabox_Field {
 		return $this;
 	}
 
+	public function set_value( $value ) {
+		if ( empty( $value ) || ! is_string( $value ) ) {
+			throw new ErrorException( 'Metabox field value needs to be a string' );
+		}
+
+		$this->_field['value'] = $value;
+
+		return $this;
+	}
+
 	public function set_values( array $values ) {
 		throw new ErrorException( 'Multiple values array can be set only for select or radio type metabox fields' );
 	}
