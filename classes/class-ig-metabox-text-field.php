@@ -68,7 +68,7 @@ class iG_Metabox_Text_Field extends iG_Metabox_Field {
 
 		unset( $this->_field['required'], $this->_field['readonly'], $this->_field['disabled'] );
 
-		return iG_Metabox_Helper::render_template( __DIR__ . '/templates/field-ui/input.php', array(
+		return iG_Metabox_Helper::render_template( IG_CUSTOM_METABOXES_ROOT . '/templates/field-ui/input.php', array(
 			'attributes'   => $this->_field,
 			'label'        => $label,
 			'description'  => $description,

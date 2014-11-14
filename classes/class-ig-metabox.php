@@ -185,7 +185,7 @@ class iG_Metabox {
 		//pass it:
 		//	- metabox ID
 		//	- fields array
-		echo iG_Metabox_Helper::render_template( __DIR__ . '/templates/metabox-ui.php', array(
+		echo iG_Metabox_Helper::render_template( IG_CUSTOM_METABOXES_ROOT . '/templates/metabox-ui.php', array(
 			'metabox_id'  => $this->_metabox['id'],
 			'metabox_css' => $this->_metabox['class'],
 			'nonce'       => $this->_nonce,

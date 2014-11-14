@@ -8,29 +8,30 @@ Author URI: http://igeek.info/
 License: GPLv2 or later
 */
 
+define( 'IG_CUSTOM_METABOXES_ROOT', __DIR__ );
 
 function ig_custom_metaboxes_loader() {
 	/*
 	 * Helpers
 	 */
-	require_once __DIR__ . '/class-ig-metabox-helper.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-helper.php';
 
 	/*
 	 * Core
 	 */
-	require_once __DIR__ . '/class-ig-metabox.php';
-	require_once __DIR__ . '/class-ig-metabox-field.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-field.php';
 
 	/*
 	 * Field type classes
 	 */
-	require_once __DIR__ . '/class-ig-metabox-text-field.php';
-	require_once __DIR__ . '/class-ig-metabox-number-field.php';
-	require_once __DIR__ . '/class-ig-metabox-email-field.php';
-	require_once __DIR__ . '/class-ig-metabox-color-field.php';
-	require_once __DIR__ . '/class-ig-metabox-date-field.php';
-	require_once __DIR__ . '/class-ig-metabox-date-time-field.php';
-	require_once __DIR__ . '/class-ig-metabox-select-field.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-text-field.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-number-field.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-email-field.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-color-field.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-date-field.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-date-time-field.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-select-field.php';
 }
 
 ig_custom_metaboxes_loader();

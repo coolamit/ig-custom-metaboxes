@@ -43,7 +43,7 @@ class iG_Metabox_Select_Field extends iG_Metabox_Field {
 
 		unset( $this->_field['required'], $this->_field['readonly'], $this->_field['disabled'] );
 
-		return iG_Metabox_Helper::render_template( __DIR__ . '/templates/field-ui/select.php', array(
+		return iG_Metabox_Helper::render_template( IG_CUSTOM_METABOXES_ROOT . '/templates/field-ui/select.php', array(
 			'field'   => $this->_field,
 			'options' => $this->_values,
 			'status'  => $status,
