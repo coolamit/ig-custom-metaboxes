@@ -33,6 +33,7 @@ function ig_custom_metaboxes_loader() {
 	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-date-time-field.php';
 	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-select-field.php';
 	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-checkbox-field.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-radio-group.php';
 }
 
 ig_custom_metaboxes_loader();
