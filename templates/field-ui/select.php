@@ -6,12 +6,13 @@
  */
 
 $css_class = ( ! empty( $field['class'] ) ) ? $field['class'] : '';
+$field['id'] = 'ig-cmf-' . $field['id'];
 ?>
-	<label for="ig-cmf-<?php echo esc_attr( $field['id'] ); ?>">
+	<label for="<?php echo esc_attr( $field['id'] ); ?>">
 		<strong><?php echo wp_kses_post( $field['label'] ); ?></strong>
 	</label>
 	<br>
-	<select id="ig-cmf-<?php echo esc_attr( $field['id'] ); ?>" name="<?php echo esc_attr( $field['name'] ); ?>" class="<?php echo esc_attr( $css_class ); ?>"<?php echo $status; ?>>
+	<select id="<?php echo esc_attr( $field['id'] ); ?>" name="<?php echo esc_attr( $field['name'] ); ?>" class="<?php echo esc_attr( $css_class ); ?>"<?php echo $status; ?>>
 <?php
 foreach ( $options as $value => $label ) {
 ?>
