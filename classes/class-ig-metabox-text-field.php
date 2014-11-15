@@ -60,13 +60,15 @@ class iG_Metabox_Text_Field extends iG_Metabox_Field {
 
 		if ( ! empty( $this->_field['label'] ) ) {
 			$label = $this->_field['label'];
-			unset( $this->_field['label'] );
 		}
+
+		unset( $this->_field['label'] );
 
 		if ( ! empty( $this->_field['description'] ) ) {
 			$description = $this->_field['description'];
-			unset( $this->_field['description'] );
 		}
+
+		unset( $this->_field['description'] );
 
 		if ( $this->_field['required'] === true ) {
 			$status = ' required';
