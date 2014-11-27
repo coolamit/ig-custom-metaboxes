@@ -108,22 +108,6 @@ abstract class iG_Metabox_Field {
 	}
 
 	/**
-	 * Set placeholder text for the field
-	 *
-	 * @param string $placeholder
-	 * @return iG_Metabox_Field
-	 */
-	public function set_placeholder( $placeholder ) {
-		if ( empty( $placeholder ) || ! is_string( $placeholder ) ) {
-			throw new ErrorException( 'Metabox field placeholder needs to be a string' );
-		}
-
-		$this->_field['placeholder'] = $placeholder;
-
-		return $this;
-	}
-
-	/**
 	 * Set default value of the field
 	 *
 	 * @param string $value

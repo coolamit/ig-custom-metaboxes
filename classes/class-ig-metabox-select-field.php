@@ -38,6 +38,22 @@ class iG_Metabox_Select_Field extends iG_Metabox_Field {
 	}
 
 	/**
+	 * Set placeholder text for the field
+	 *
+	 * @param string $placeholder
+	 * @return iG_Metabox_Field
+	 */
+	public function set_placeholder( $placeholder ) {
+		if ( empty( $placeholder ) || ! is_string( $placeholder ) ) {
+			throw new ErrorException( 'Metabox field placeholder needs to be a string' );
+		}
+
+		$this->_field['placeholder'] = $placeholder;
+
+		return $this;
+	}
+
+	/**
 	 * This method renders the UI for the field
 	 *
 	 * @param int $post_id ID of the post for which field is being created

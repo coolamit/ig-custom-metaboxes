@@ -68,6 +68,22 @@ class iG_Metabox_Text_Field extends iG_Metabox_Field {
 	}
 
 	/**
+	 * Set placeholder text for the field
+	 *
+	 * @param string $placeholder
+	 * @return iG_Metabox_Field
+	 */
+	public function set_placeholder( $placeholder ) {
+		if ( empty( $placeholder ) || ! is_string( $placeholder ) ) {
+			throw new ErrorException( 'Metabox field placeholder needs to be a string' );
+		}
+
+		$this->_field['placeholder'] = $placeholder;
+
+		return $this;
+	}
+
+	/**
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function set_values( array $values ) {

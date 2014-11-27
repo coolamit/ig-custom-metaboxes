@@ -21,13 +21,6 @@ class iG_Metabox_Radio_Group extends iG_Metabox_Field {
 	/**
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
-	public function set_placeholder( $placeholder ) {
-		throw new ErrorException( 'Cannot set placeholder for radio type metabox field' );
-	}
-
-	/**
-	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
-	 */
 	public function is_readonly() {
 		throw new ErrorException( 'Cannot make radio type metabox field read only' );
 	}
