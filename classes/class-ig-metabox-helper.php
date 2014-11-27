@@ -1,10 +1,15 @@
 <?php
+/**
+ * Class containing collection of helper methods.
+ *
+ * @author Amit Gupta <http://amitgupta.in/>
+ */
 
 
 class iG_Metabox_Helper {
 
 	/**
-	 * Function to check if an array is associative array or not.
+	 * Method to check if an array is associative array or not.
 	 *
 	 * @param array $array_to_check Array which is to be checked
 	 * @return boolean Returns TRUE if the array is associative else FALSE. Even a single numeric key would make this function return FALSE.
@@ -13,6 +18,13 @@ class iG_Metabox_Helper {
 		return ! (bool) count( array_filter( array_keys( $array_to_check ), 'is_numeric' ) );
 	}
 
+	/**
+	 * Method to render a template and return the markup
+	 *
+	 * @param string $template File path to the template file
+	 * @param array $vars Associative array of values which are to be injected into the template. The array keys become var names and key values respective var values.
+	 * @return string Template markup ready for output
+	 */
 	public static function render_template( $template, array $vars = array() ) {
 		if ( empty( $template ) ) {
 			throw new ErrorException( 'Template file path not defined, this code is not psychic!' );
