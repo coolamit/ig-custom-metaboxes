@@ -25,13 +25,6 @@ class iG_Metabox_Select_Field extends iG_Metabox_Field {
 	/**
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
-	public function set_maxlength( $maxlength ) {
-		throw new ErrorException( 'Cannot set maxlength for select type metabox field' );
-	}
-
-	/**
-	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
-	 */
 	public function is_readonly() {
 		throw new ErrorException( 'Cannot make select type metabox field read only' );
 	}
