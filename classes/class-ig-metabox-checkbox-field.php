@@ -86,7 +86,7 @@ class iG_Metabox_Checkbox_Field extends iG_Metabox_Text_Field {
 	protected function _render_input_checkbox_field( $post_id = 0 ) {
 		$this->_run_pre_flight();
 
-		if ( $this->_field['value'] == $this->get_data( $post_id ) ) {
+		if ( $this->_field['value'] == $this->get_data( $post_id ) || $this->_field['value'] == $this->_default_value ) {
 			$this->_field['checked'] = 'checked';
 		}
 
