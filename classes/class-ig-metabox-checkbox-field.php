@@ -49,6 +49,22 @@ class iG_Metabox_Checkbox_Field extends iG_Metabox_Text_Field {
 	}
 
 	/**
+	 * Set value for the field
+	 *
+	 * @param string $placeholder
+	 * @return iG_Metabox_Field
+	 */
+	public function set_value( $value ) {
+		if ( empty( $value ) || ! is_string( $value ) ) {
+			throw new ErrorException( 'Metabox field value needs to be a string' );
+		}
+
+		$this->_field['value'] = $value;
+
+		return $this;
+	}
+
+	/**
 	 * This method checks for required properties of the field before rendering the field.
 	 *
 	 * @return boolean Returns TRUE if all ok else throws an exception
