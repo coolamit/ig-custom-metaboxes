@@ -7,6 +7,12 @@
 
 class iG_Metabox_Select_Field extends iG_Metabox_Field {
 
+	/*
+	 * Import trait
+	 */
+	use iG_Set_Values;
+
+
 	/**
 	 * Field initialization stuff
 	 *

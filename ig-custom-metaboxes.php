@@ -17,6 +17,11 @@ function ig_custom_metaboxes_loader() {
 	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-helper.php';
 
 	/*
+	 * Traits
+	 */
+	require_once IG_CUSTOM_METABOXES_ROOT . '/traits/trait-ig-set-values.php';
+
+	/*
 	 * Core
 	 */
 	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox.php';

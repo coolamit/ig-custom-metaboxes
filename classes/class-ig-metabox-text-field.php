@@ -68,13 +68,6 @@ class iG_Metabox_Text_Field extends iG_Metabox_Field {
 	}
 
 	/**
-	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
-	 */
-	public function set_values( array $values ) {
-		throw new ErrorException( 'Multiple values array can be set only for select or radio type metabox fields' );
-	}
-
-	/**
 	 * This method renders the UI for the field
 	 *
 	 * @param int $post_id ID of the post for which field is being created

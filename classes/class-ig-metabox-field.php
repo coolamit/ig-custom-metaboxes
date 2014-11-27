@@ -124,22 +124,6 @@ abstract class iG_Metabox_Field {
 	}
 
 	/**
-	 * Set multiple values for the field. This method is only for those fields which allow selection of a value from multiple values like select dropdown or radio button group.
-	 *
-	 * @param array $values Associative array of values
-	 * @return iG_Metabox_Field
-	 */
-	public function set_values( array $values ) {
-		if ( empty( $values ) ) {
-			throw new ErrorException( 'Metabox field values need to be in an array' );
-		}
-
-		$this->_values = $values;
-
-		return $this;
-	}
-
-	/**
 	 * Set CSS class for the field. Multiple classes can be set by passing them in a string with class names separated by single space.
 	 *
 	 * @param string $class
