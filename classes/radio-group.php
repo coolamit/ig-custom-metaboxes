@@ -32,7 +32,7 @@ class Radio_Group extends Field {
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function is_readonly() {
-		throw new ErrorException( 'Cannot make radio type metabox field read only' );
+		throw new \ErrorException( 'Cannot make radio type metabox field read only' );
 	}
 
 	/**
@@ -42,7 +42,7 @@ class Radio_Group extends Field {
 	 */
 	protected function _run_pre_flight() {
 		if ( empty( $this->_values ) ) {
-			throw new ErrorException( 'One or more values must be defined for radio type metabox field' );
+			throw new \ErrorException( 'One or more values must be defined for radio type metabox field' );
 		}
 
 		return true;

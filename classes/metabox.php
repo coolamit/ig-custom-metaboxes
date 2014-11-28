@@ -49,7 +49,7 @@ class Metabox {
 	 */
 	public function __construct( $id ) {
 		if ( empty( $id ) || ! is_string( $id ) ) {
-			throw new ErrorException( 'Metabox ID is required and must be a string' );
+			throw new \ErrorException( 'Metabox ID is required and must be a string' );
 		}
 
 		$this->_metabox['id'] = sanitize_title_with_dashes( $id );
@@ -84,7 +84,7 @@ class Metabox {
 		$this->_maybe_setup_defaults();
 
 		if ( empty( $this->_fields ) ) {
-			throw new ErrorException( 'Metabox cannot be created without any data input fields' );
+			throw new \ErrorException( 'Metabox cannot be created without any data input fields' );
 		}
 
 		return true;
@@ -129,7 +129,7 @@ class Metabox {
 	 */
 	public function set_title( $title ) {
 		if ( empty( $title ) || ! is_string( $title ) ) {
-			throw new ErrorException( 'Metabox title needs to be defined' );
+			throw new \ErrorException( 'Metabox title needs to be defined' );
 		}
 
 		$this->_metabox['title'] = $title;
@@ -145,7 +145,7 @@ class Metabox {
 	 */
 	public function set_post_type( $post_type ) {
 		if ( empty( $post_type ) || ! is_string( $post_type ) ) {
-			throw new ErrorException( 'Post type needs to be defined for which metabox is to be created' );
+			throw new \ErrorException( 'Post type needs to be defined for which metabox is to be created' );
 		}
 
 		$this->set_post_types( array( $post_type ) );
@@ -161,7 +161,7 @@ class Metabox {
 	 */
 	public function set_post_types( array $post_types ) {
 		if ( empty( $post_types ) ) {
-			throw new ErrorException( 'Post types need to be defined for which metabox is to be created' );
+			throw new \ErrorException( 'Post types need to be defined for which metabox is to be created' );
 		}
 
 		$this->_post_types = array_filter( array_unique( array_merge( $this->_post_types, array_map( 'trim', $post_types ) ) ) );
@@ -177,7 +177,7 @@ class Metabox {
 	 */
 	public function set_context( $context ) {
 		if ( empty( $context ) || ! is_string( $context ) ) {
-			throw new ErrorException( 'Metabox context needs to be defined' );
+			throw new \ErrorException( 'Metabox context needs to be defined' );
 		}
 
 		$this->_metabox['context'] = $context;
@@ -193,7 +193,7 @@ class Metabox {
 	 */
 	public function set_priority( $priority ) {
 		if ( empty( $priority ) || ! is_string( $priority ) ) {
-			throw new ErrorException( 'Metabox priority needs to be defined' );
+			throw new \ErrorException( 'Metabox priority needs to be defined' );
 		}
 
 		$this->_metabox['priority'] = $priority;
@@ -209,7 +209,7 @@ class Metabox {
 	 */
 	public function set_css_class( $class ) {
 		if ( empty( $class ) || ! is_string( $class ) ) {
-			throw new ErrorException( 'Metabox CSS class needs to be a string' );
+			throw new \ErrorException( 'Metabox CSS class needs to be a string' );
 		}
 
 		$this->_metabox['class'] = $class;

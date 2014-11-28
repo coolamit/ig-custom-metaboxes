@@ -19,7 +19,7 @@ trait Set_Values {
 	 */
 	public function set_values( array $values ) {
 		if ( empty( $values ) ) {
-			throw new ErrorException( 'Metabox field values need to be in an array' );
+			throw new \ErrorException( 'Metabox field values need to be in an array' );
 		}
 
 		$this->_values = $values;

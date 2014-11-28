@@ -25,7 +25,7 @@ class Number_Field extends Text_Field {
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function set_maxlength( $maxlength ) {
-		throw new ErrorException( 'Cannot set maxlength for number type metabox field' );
+		throw new \ErrorException( 'Cannot set maxlength for number type metabox field' );
 	}
 
 	/**
@@ -36,7 +36,7 @@ class Number_Field extends Text_Field {
 	 */
 	public function set_min( $value ) {
 		if ( empty( $value ) || ! is_numeric( $value ) ) {
-			throw new ErrorException( 'Minimum value for number type metabox field must be a number' );
+			throw new \ErrorException( 'Minimum value for number type metabox field must be a number' );
 		}
 
 		$this->_field['min'] = floatval( $value );
@@ -52,7 +52,7 @@ class Number_Field extends Text_Field {
 	 */
 	public function set_max( $value ) {
 		if ( empty( $value ) || ! is_numeric( $value ) ) {
-			throw new ErrorException( 'Maximum value for number type metabox field must be a number' );
+			throw new \ErrorException( 'Maximum value for number type metabox field must be a number' );
 		}
 
 		$this->_field['max'] = floatval( $value );
@@ -68,7 +68,7 @@ class Number_Field extends Text_Field {
 	 */
 	public function set_step( $value ) {
 		if ( empty( $value ) || ! is_numeric( $value ) ) {
-			throw new ErrorException( 'Step value for number type metabox field must be a number' );
+			throw new \ErrorException( 'Step value for number type metabox field must be a number' );
 		}
 
 		$this->_field['step'] = floatval( $value );

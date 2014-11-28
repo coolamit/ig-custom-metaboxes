@@ -30,7 +30,7 @@ class Select_Field extends Field {
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function is_readonly() {
-		throw new ErrorException( 'Cannot make select type metabox field read only' );
+		throw new \ErrorException( 'Cannot make select type metabox field read only' );
 	}
 
 	/**
@@ -41,7 +41,7 @@ class Select_Field extends Field {
 	 */
 	public function set_placeholder( $placeholder ) {
 		if ( empty( $placeholder ) || ! is_string( $placeholder ) ) {
-			throw new ErrorException( 'Metabox field placeholder needs to be a string' );
+			throw new \ErrorException( 'Metabox field placeholder needs to be a string' );
 		}
 
 		$this->_field['placeholder'] = $placeholder;

@@ -25,14 +25,14 @@ class Date_Field extends Text_Field {
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function set_maxlength( $maxlength ) {
-		throw new ErrorException( 'Cannot set maxlength for date type metabox field' );
+		throw new \ErrorException( 'Cannot set maxlength for date type metabox field' );
 	}
 
 	/**
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function set_placeholder( $placeholder ) {
-		throw new ErrorException( 'Cannot set placeholder text for date type metabox field' );
+		throw new \ErrorException( 'Cannot set placeholder text for date type metabox field' );
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Date_Field extends Text_Field {
 	 */
 	public function set_min( $value ) {
 		if ( empty( $value ) || ! $this->is_date( $value ) ) {
-			throw new ErrorException( 'Minimum value for date type metabox field must be a date in YYYY-MM-DD format' );
+			throw new \ErrorException( 'Minimum value for date type metabox field must be a date in YYYY-MM-DD format' );
 		}
 
 		$this->_field['min'] = $this->sanitize_data( $value );
@@ -59,7 +59,7 @@ class Date_Field extends Text_Field {
 	 */
 	public function set_max( $value ) {
 		if ( empty( $value ) || ! $this->is_date( $value ) ) {
-			throw new ErrorException( 'Maximum value for date type metabox field must be a date in YYYY-MM-DD format' );
+			throw new \ErrorException( 'Maximum value for date type metabox field must be a date in YYYY-MM-DD format' );
 		}
 
 		$this->_field['max'] = $this->sanitize_data( $value );

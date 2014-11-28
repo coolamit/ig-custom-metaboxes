@@ -31,7 +31,7 @@ class Text_Field extends Field {
 	 */
 	public function set_size( $size ) {
 		if ( empty( $size ) || ! is_numeric( $size ) ) {
-			throw new ErrorException( 'Metabox field size needs to be a number' );
+			throw new \ErrorException( 'Metabox field size needs to be a number' );
 		}
 
 		$this->_field['size'] = intval( $size );
@@ -47,7 +47,7 @@ class Text_Field extends Field {
 	 */
 	public function set_maxlength( $maxlength ) {
 		if ( empty( $maxlength ) || ! is_numeric( $maxlength ) ) {
-			throw new ErrorException( 'Metabox field maxlength needs to be a number' );
+			throw new \ErrorException( 'Metabox field maxlength needs to be a number' );
 		}
 
 		$this->_field['maxlength'] = intval( $maxlength );
@@ -63,7 +63,7 @@ class Text_Field extends Field {
 	 */
 	public function set_placeholder( $placeholder ) {
 		if ( empty( $placeholder ) || ! is_string( $placeholder ) ) {
-			throw new ErrorException( 'Metabox field placeholder needs to be a string' );
+			throw new \ErrorException( 'Metabox field placeholder needs to be a string' );
 		}
 
 		$this->_field['placeholder'] = $placeholder;

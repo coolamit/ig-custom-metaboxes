@@ -28,15 +28,15 @@ class Helper {
 	 */
 	public static function render_template( $template, array $vars = array() ) {
 		if ( empty( $template ) ) {
-			throw new ErrorException( 'Template file path not defined, this code is not psychic!' );
+			throw new \ErrorException( 'Template file path not defined, this code is not psychic!' );
 		}
 
 		if ( ! file_exists( $template ) ) {
-			throw new ErrorException( 'Template ' . basename( $template ) . ' does not exist' );
+			throw new \ErrorException( 'Template ' . basename( $template ) . ' does not exist' );
 		}
 
 		if ( ! empty( $vars ) && ! static::is_associative_array( $vars ) ) {
-			throw new ErrorException( 'Variables for the template must be passed as an associative array' );
+			throw new \ErrorException( 'Variables for the template must be passed as an associative array' );
 		}
 
 		extract( $vars, EXTR_SKIP );

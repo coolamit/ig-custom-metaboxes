@@ -26,28 +26,28 @@ class Checkbox_Field extends Text_Field {
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function set_placeholder( $placeholder ) {
-		throw new ErrorException( 'Cannot set placeholder for checkbox type metabox field' );
+		throw new \ErrorException( 'Cannot set placeholder for checkbox type metabox field' );
 	}
 
 	/**
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function set_size( $size ) {
-		throw new ErrorException( 'Cannot set size for checkbox type metabox field' );
+		throw new \ErrorException( 'Cannot set size for checkbox type metabox field' );
 	}
 
 	/**
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function set_maxlength( $maxlength ) {
-		throw new ErrorException( 'Cannot set maxlength for checkbox type metabox field' );
+		throw new \ErrorException( 'Cannot set maxlength for checkbox type metabox field' );
 	}
 
 	/**
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function is_readonly() {
-		throw new ErrorException( 'Cannot make checkbox type metabox field read only' );
+		throw new \ErrorException( 'Cannot make checkbox type metabox field read only' );
 	}
 
 	/**
@@ -58,7 +58,7 @@ class Checkbox_Field extends Text_Field {
 	 */
 	public function set_value( $value ) {
 		if ( empty( $value ) || ! is_string( $value ) ) {
-			throw new ErrorException( 'Metabox field value needs to be a string' );
+			throw new \ErrorException( 'Metabox field value needs to be a string' );
 		}
 
 		$this->_field['value'] = $value;
@@ -73,7 +73,7 @@ class Checkbox_Field extends Text_Field {
 	 */
 	protected function _run_pre_flight() {
 		if ( empty( $this->_field['value'] ) ) {
-			throw new ErrorException( 'Value must be defined for checkbox type metabox field' );
+			throw new \ErrorException( 'Value must be defined for checkbox type metabox field' );
 		}
 
 		return true;

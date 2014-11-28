@@ -63,11 +63,11 @@ abstract class Field {
 	 */
 	final public function __construct( $id, $label ) {
 		if ( empty( $id ) || ! is_string( $id ) ) {
-			throw new ErrorException( 'Field ID is required and must be a string' );
+			throw new \ErrorException( 'Field ID is required and must be a string' );
 		}
 
 		if ( empty( $label ) || ! is_string( $label ) ) {
-			throw new ErrorException( 'Field label is required and must be a string' );
+			throw new \ErrorException( 'Field label is required and must be a string' );
 		}
 
 		$this->_field['id'] = $id;
@@ -101,7 +101,7 @@ abstract class Field {
 	 */
 	public function set_description( $description ) {
 		if ( empty( $description ) || ! is_string( $description ) ) {
-			throw new ErrorException( 'Metabox field description needs to be a string' );
+			throw new \ErrorException( 'Metabox field description needs to be a string' );
 		}
 
 		$this->_field['description'] = $description;
@@ -117,7 +117,7 @@ abstract class Field {
 	 */
 	public function set_default_value( $value ) {
 		if ( empty( $value ) || ! is_string( $value ) ) {
-			throw new ErrorException( 'Metabox field value needs to be a string' );
+			throw new \ErrorException( 'Metabox field value needs to be a string' );
 		}
 
 		$this->_default_value = $value;
@@ -133,7 +133,7 @@ abstract class Field {
 	 */
 	public function set_css_class( $class ) {
 		if ( empty( $class ) || ! is_string( $class ) ) {
-			throw new ErrorException( 'Metabox field CSS class needs to be a string' );
+			throw new \ErrorException( 'Metabox field CSS class needs to be a string' );
 		}
 
 		$this->_field['class'] = $class;
@@ -176,7 +176,7 @@ abstract class Field {
 	 */
 	public function is_required() {
 		if ( $this->_field['readonly'] === true || $this->_field['disabled'] === true ) {
-			throw new ErrorException( 'Cannot require input on a read-only or disabled field' );
+			throw new \ErrorException( 'Cannot require input on a read-only or disabled field' );
 		}
 
 		$this->_field['required'] = true;
@@ -191,7 +191,7 @@ abstract class Field {
 	 */
 	public function is_readonly() {
 		if ( $this->_field['required'] === true ) {
-			throw new ErrorException( 'A required field cannot be made read only' );
+			throw new \ErrorException( 'A required field cannot be made read only' );
 		}
 
 		$this->_field['readonly'] = true;
@@ -206,7 +206,7 @@ abstract class Field {
 	 */
 	public function is_disabled() {
 		if ( $this->_field['required'] === true ) {
-			throw new ErrorException( 'A required field cannot be disabled' );
+			throw new \ErrorException( 'A required field cannot be disabled' );
 		}
 
 		$this->_field['disabled'] = true;
@@ -233,7 +233,7 @@ abstract class Field {
 		$args = array_merge( array( $data ), $this->_sanitize['args'] );
 
 		if ( ! is_callable( $this->_sanitize['callback'] ) ) {
-			throw new ErrorException( sprintf( 'Data sanitization callback defined for field %s is uncallable', $this->get_id() ) );
+			throw new \ErrorException( sprintf( 'Data sanitization callback defined for field %s is uncallable', $this->get_id() ) );
 		}
 
 		return call_user_func_array( $this->_sanitize['callback'], $args );
@@ -249,7 +249,7 @@ abstract class Field {
 		$args = array_merge( array( $post_id ), $this->_render['args'] );
 
 		if ( ! is_callable( $this->_render['callback'] ) ) {
-			throw new ErrorException( sprintf( 'Meta field render callback defined for field %s is uncallable', $this->get_id() ) );
+			throw new \ErrorException( sprintf( 'Meta field render callback defined for field %s is uncallable', $this->get_id() ) );
 		}
 
 		return call_user_func_array( $this->_render['callback'], $args );

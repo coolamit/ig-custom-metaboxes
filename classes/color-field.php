@@ -25,21 +25,21 @@ class Color_Field extends Text_Field {
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function set_maxlength( $maxlength ) {
-		throw new ErrorException( 'Cannot set maxlength for color type metabox field' );
+		throw new \ErrorException( 'Cannot set maxlength for color type metabox field' );
 	}
 
 	/**
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function set_placeholder( $placeholder ) {
-		throw new ErrorException( 'Cannot set placeholder text for color type metabox field' );
+		throw new \ErrorException( 'Cannot set placeholder text for color type metabox field' );
 	}
 
 	/**
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function is_readonly() {
-		throw new ErrorException( 'Cannot make color type metabox field read only' );
+		throw new \ErrorException( 'Cannot make color type metabox field read only' );
 	}
 
 	/**
