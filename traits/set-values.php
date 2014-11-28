@@ -7,14 +7,15 @@
  * @author Amit Gupta <http://amitgupta.in/>
  */
 
+namespace iG\Metabox\Traits;
 
-trait iG_Set_Values {
+trait Set_Values {
 
 	/**
 	 * Set values for the field.
 	 *
 	 * @param array $values Associative array of values
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_values( array $values ) {
 		if ( empty( $values ) ) {

@@ -5,7 +5,11 @@
  * @author Amit Gupta <http://amitgupta.in/>
  */
 
-class iG_Metabox_Text_Field extends iG_Metabox_Field {
+namespace iG\Metabox;
+
+use iG\Metabox\Helper as iG_Metabox_Helper;
+
+class Text_Field extends Field {
 
 	/**
 	 * Field initialization stuff
@@ -23,7 +27,7 @@ class iG_Metabox_Text_Field extends iG_Metabox_Field {
 	 * Set size of the field.
 	 *
 	 * @param int $size
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_size( $size ) {
 		if ( empty( $size ) || ! is_numeric( $size ) ) {
@@ -39,7 +43,7 @@ class iG_Metabox_Text_Field extends iG_Metabox_Field {
 	 * Set maxlength of the field.
 	 *
 	 * @param int $maxlength
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_maxlength( $maxlength ) {
 		if ( empty( $maxlength ) || ! is_numeric( $maxlength ) ) {
@@ -55,7 +59,7 @@ class iG_Metabox_Text_Field extends iG_Metabox_Field {
 	 * Set placeholder text for the field
 	 *
 	 * @param string $placeholder
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_placeholder( $placeholder ) {
 		if ( empty( $placeholder ) || ! is_string( $placeholder ) ) {

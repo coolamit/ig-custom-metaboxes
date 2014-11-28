@@ -5,7 +5,9 @@
  * @author Amit Gupta <http://amitgupta.in/>
  */
 
-class iG_Metabox_Color_Field extends iG_Metabox_Text_Field {
+namespace iG\Metabox;
+
+class Color_Field extends Text_Field {
 
 	/**
 	 * Field initialization stuff

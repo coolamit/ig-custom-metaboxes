@@ -5,7 +5,9 @@
  * @author Amit Gupta <http://amitgupta.in/>
  */
 
-class iG_Metabox_Checkbox_Field extends iG_Metabox_Text_Field {
+namespace iG\Metabox;
+
+class Checkbox_Field extends Text_Field {
 
 	/**
 	 * Field initialization stuff
@@ -52,7 +54,7 @@ class iG_Metabox_Checkbox_Field extends iG_Metabox_Text_Field {
 	 * Set value for the field
 	 *
 	 * @param string $placeholder
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_value( $value ) {
 		if ( empty( $value ) || ! is_string( $value ) ) {

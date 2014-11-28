@@ -6,7 +6,12 @@
  * @author Amit Gupta <http://amitgupta.in/>
  */
 
-class iG_Metabox {
+namespace iG\Metabox;
+
+use iG\Metabox\Helper as iG_Metabox_Helper;
+use iG\Metabox\Field as iG_Metabox_Field;
+
+class Metabox {
 
 	/**
 	 * @var array An array of post types for which the metabox is to be created
@@ -215,7 +220,7 @@ class iG_Metabox {
 	/**
 	 * Add a data input field to the metabox.
 	 *
-	 * @param iG_Metabox_Field $field An object of a child class of iG_Metabox_Field
+	 * @param iG\Metabox\Field\Field $field An object of a child class of iG\Metabox\Field\Field
 	 * @return iG_Metabox
 	 */
 	public function add_field( iG_Metabox_Field $field ) {

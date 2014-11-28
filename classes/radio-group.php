@@ -5,12 +5,16 @@
  * @author Amit Gupta <http://amitgupta.in/>
  */
 
-class iG_Metabox_Radio_Group extends iG_Metabox_Field {
+namespace iG\Metabox;
+
+use iG\Metabox\Helper as iG_Metabox_Helper;
+
+class Radio_Group extends Field {
 
 	/*
 	 * Import trait
 	 */
-	use iG_Set_Values;
+	use \iG\Metabox\Traits\Set_Values;
 
 
 	/**

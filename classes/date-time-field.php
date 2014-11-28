@@ -5,7 +5,9 @@
  * @author Amit Gupta <http://amitgupta.in/>
  */
 
-class iG_Metabox_Date_Time_Field extends iG_Metabox_Text_Field {
+namespace iG\Metabox;
+
+class Date_Time_Field extends Text_Field {
 
 	/**
 	 * Field initialization stuff
@@ -37,7 +39,7 @@ class iG_Metabox_Date_Time_Field extends iG_Metabox_Text_Field {
 	 * Set minimum date time
 	 *
 	 * @param string $value Date Time in YYYY-MM-DDTHH:MI format
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_min( $value ) {
 		if ( empty( $value ) || ! $this->is_datetime( $value ) ) {
@@ -53,7 +55,7 @@ class iG_Metabox_Date_Time_Field extends iG_Metabox_Text_Field {
 	 * Set maximum date time
 	 *
 	 * @param string $value Date Time in YYYY-MM-DDTHH:MI format
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_max( $value ) {
 		if ( empty( $value ) || ! $this->is_datetime( $value ) ) {

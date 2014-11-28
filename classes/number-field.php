@@ -5,7 +5,9 @@
  * @author Amit Gupta <http://amitgupta.in/>
  */
 
-class iG_Metabox_Number_Field extends iG_Metabox_Text_Field {
+namespace iG\Metabox;
+
+class Number_Field extends Text_Field {
 
 	/**
 	 * Field initialization stuff
@@ -30,7 +32,7 @@ class iG_Metabox_Number_Field extends iG_Metabox_Text_Field {
 	 * Set minimum value
 	 *
 	 * @param float $value
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_min( $value ) {
 		if ( empty( $value ) || ! is_numeric( $value ) ) {
@@ -46,7 +48,7 @@ class iG_Metabox_Number_Field extends iG_Metabox_Text_Field {
 	 * Set maximum value
 	 *
 	 * @param float $value
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_max( $value ) {
 		if ( empty( $value ) || ! is_numeric( $value ) ) {
@@ -62,7 +64,7 @@ class iG_Metabox_Number_Field extends iG_Metabox_Text_Field {
 	 * Set step value, value by which current value is to be incremented or decremented
 	 *
 	 * @param float $value
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_step( $value ) {
 		if ( empty( $value ) || ! is_numeric( $value ) ) {

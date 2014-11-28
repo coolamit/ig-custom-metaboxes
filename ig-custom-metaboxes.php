@@ -12,33 +12,9 @@ define( 'IG_CUSTOM_METABOXES_ROOT', __DIR__ );
 
 function ig_custom_metaboxes_loader() {
 	/*
-	 * Helpers
+	 * Load autoloader
 	 */
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-helper.php';
-
-	/*
-	 * Traits
-	 */
-	require_once IG_CUSTOM_METABOXES_ROOT . '/traits/trait-ig-set-values.php';
-
-	/*
-	 * Core
-	 */
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox.php';
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-field.php';
-
-	/*
-	 * Field type classes
-	 */
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-text-field.php';
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-number-field.php';
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-email-field.php';
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-color-field.php';
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-date-field.php';
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-date-time-field.php';
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-select-field.php';
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-checkbox-field.php';
-	require_once IG_CUSTOM_METABOXES_ROOT . '/classes/class-ig-metabox-radio-group.php';
+	require_once IG_CUSTOM_METABOXES_ROOT . '/autoload.php';
 }
 
 ig_custom_metaboxes_loader();

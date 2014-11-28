@@ -5,7 +5,9 @@
  * @author Amit Gupta <http://amitgupta.in/>
  */
 
-abstract class iG_Metabox_Field {
+namespace iG\Metabox;
+
+abstract class Field {
 
 	/**
 	 * @var array Field properties
@@ -83,7 +85,7 @@ abstract class iG_Metabox_Field {
 	 *
 	 * @param string $id Unique ID of the field
 	 * @param string $label Label to display for the field
-	 * @return iG_Metabox_Field Object of the specific field class
+	 * @return iG\Metabox\Field Object of the specific field class
 	 */
 	final public static function create( $id, $label ) {
 		$class = get_called_class();
@@ -95,7 +97,7 @@ abstract class iG_Metabox_Field {
 	 * Set description of the field
 	 *
 	 * @param string $description
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_description( $description ) {
 		if ( empty( $description ) || ! is_string( $description ) ) {
@@ -111,7 +113,7 @@ abstract class iG_Metabox_Field {
 	 * Set default value of the field
 	 *
 	 * @param string $value
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_default_value( $value ) {
 		if ( empty( $value ) || ! is_string( $value ) ) {
@@ -127,7 +129,7 @@ abstract class iG_Metabox_Field {
 	 * Set CSS class for the field. Multiple classes can be set by passing them in a string with class names separated by single space.
 	 *
 	 * @param string $class
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_css_class( $class ) {
 		if ( empty( $class ) || ! is_string( $class ) ) {
@@ -144,7 +146,7 @@ abstract class iG_Metabox_Field {
 	 *
 	 * @param string|array $callback
 	 * @param array $args Optional parameters which are passed to the callback
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_sanitize_callback( $callback, array $args = array() ) {
 		$this->_sanitize['callback'] = $callback;
@@ -158,7 +160,7 @@ abstract class iG_Metabox_Field {
 	 *
 	 * @param string|array $callback
 	 * @param array $args Optional parameters which are passed to the callback
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_render_callback( $callback, array $args = array() ) {
 		$this->_render['callback'] = $callback;
@@ -170,7 +172,7 @@ abstract class iG_Metabox_Field {
 	/**
 	 * Set the field as required
 	 *
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function is_required() {
 		if ( $this->_field['readonly'] === true || $this->_field['disabled'] === true ) {
@@ -185,7 +187,7 @@ abstract class iG_Metabox_Field {
 	/**
 	 * Set the field as read only
 	 *
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function is_readonly() {
 		if ( $this->_field['required'] === true ) {
@@ -200,7 +202,7 @@ abstract class iG_Metabox_Field {
 	/**
 	 * Set the field as disabled
 	 *
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function is_disabled() {
 		if ( $this->_field['required'] === true ) {

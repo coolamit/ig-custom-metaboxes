@@ -5,8 +5,9 @@
  * @author Amit Gupta <http://amitgupta.in/>
  */
 
+namespace iG\Metabox;
 
-class iG_Metabox_Helper {
+class Helper {
 
 	/**
 	 * Method to check if an array is associative array or not.

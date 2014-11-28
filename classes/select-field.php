@@ -5,12 +5,16 @@
  * @author Amit Gupta <http://amitgupta.in/>
  */
 
-class iG_Metabox_Select_Field extends iG_Metabox_Field {
+namespace iG\Metabox;
+
+use iG\Metabox\Helper as iG_Metabox_Helper;
+
+class Select_Field extends Field {
 
 	/*
 	 * Import trait
 	 */
-	use iG_Set_Values;
+	use \iG\Metabox\Traits\Set_Values;
 
 
 	/**
@@ -33,7 +37,7 @@ class iG_Metabox_Select_Field extends iG_Metabox_Field {
 	 * Set placeholder text for the field
 	 *
 	 * @param string $placeholder
-	 * @return iG_Metabox_Field
+	 * @return iG\Metabox\Field
 	 */
 	public function set_placeholder( $placeholder ) {
 		if ( empty( $placeholder ) || ! is_string( $placeholder ) ) {
