@@ -1,20 +1,34 @@
 <?php
 /**
  * Class and Trait autoloader for this plugin
+ *
+ * @author Amit Gupta <http://amitgupta.in/>
  */
 
+/*
+ * Register resource autoloader
+ */
+spl_autoload_register( 'ig_custom_metaboxes_autoloader' );
 
-function __autoload( $classname = '' ) {
+/**
+ * The function that makes on-demand autoloading of files for this plugin
+ * possible. It is registered with spl_autoload_register() and must not be
+ * called directly.
+ *
+ * @param string $resource Fully qualified name of the resource that is to be loaded
+ * @return void
+ */
+function ig_custom_metaboxes_autoloader( $resource = '' ) {
 	$namespace_root = 'iG\Metabox';
 
-	$classname = trim( $classname, '\\' );
+	$resource = trim( $resource, '\\' );
 
-	if ( empty( $classname ) || strpos( $classname, '\\' ) === false || strpos( $classname, $namespace_root ) !== 0 ) {
+	if ( empty( $resource ) || strpos( $resource, '\\' ) === false || strpos( $resource, $namespace_root ) !== 0 ) {
 		//not our namespace, bail out
 		return;
 	}
 
-	$path = explode( '\\', $classname );
+	$path = explode( '\\', $resource );
 
 	array_shift( $path );
 	array_shift( $path );
