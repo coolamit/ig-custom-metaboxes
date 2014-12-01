@@ -19,6 +19,7 @@ class Color_Field extends Text_Field {
 
 		$this->_field['type'] = 'color';
 		$this->set_sanitize_callback( array( $this, 'sanitize_hexadecimal_color_code' ) );
+		$this->set_css_class( 'ig-cmf-input-color' );
 	}
 
 	/**
