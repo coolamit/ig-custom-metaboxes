@@ -23,6 +23,20 @@ class Color_Field extends Text_Field {
 	}
 
 	/**
+	 * Set up hooks for this class
+	 *
+	 * @return void
+	 */
+	protected function _setup_hooks() {
+		parent::_setup_hooks();
+
+		/*
+		 * Filters
+		 */
+		add_filter( 'ig-cmf-template-color-field', array( $this, 'override_template' ) );
+	}
+
+	/**
 	 * Parent method override, method is not applicable to this field. Using this will result in an exception being thrown.
 	 */
 	public function set_maxlength( $maxlength ) {
@@ -62,6 +76,18 @@ class Color_Field extends Text_Field {
 		}
 
 		return strtoupper( $color_code );
+	}
+
+	/**
+	 * This method is called on 'ig-cmf-template-color-field' filter and it sets
+	 * a different template for this field than the default. This method must
+	 * not be called directly.
+	 *
+	 * @param string $template File path to template
+	 * @return string File path to template of this field
+	 */
+	public function override_template( $template = '' ) {
+		return IG_CUSTOM_METABOXES_ROOT . '/templates/field-ui/input-color.php';
 	}
 
 }	//end of class
