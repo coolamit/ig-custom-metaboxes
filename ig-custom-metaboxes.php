@@ -9,6 +9,7 @@ License: GPLv2 or later
 */
 
 define( 'IG_CUSTOM_METABOXES_ROOT', __DIR__ );
+define( 'IG_CUSTOM_METABOXES_VERSION', '1.0-beta' );
 
 function ig_custom_metaboxes_loader() {
 	/*
