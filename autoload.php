@@ -28,18 +28,19 @@ function ig_custom_metaboxes_autoloader( $resource = '' ) {
 		return;
 	}
 
-	$path = explode( '\\', $resource );
+	$path = str_replace(
+				'_',
+				'-',
+				implode(
+					'/',
+					array_slice(	//remove the namespace root and grab the actual resource
+						explode( '\\', $resource ),
+						2
+					)
+				)
+			);
 
-	array_shift( $path );
-	array_shift( $path );
-
-	$path = strtolower( str_replace( '_', '-', implode( '/', $path ) ) );
-
-	if ( strpos( $path, 'trait' ) !== 0 ) {
-		$path = 'classes/' . $path;
-	}
-
-	$path = sprintf( '%s/%s.php', untrailingslashit( IG_CUSTOM_METABOXES_ROOT ), $path );
+	$path = sprintf( '%s/classes/%s.php', untrailingslashit( IG_CUSTOM_METABOXES_ROOT ), strtolower( $path ) );
 
 	if ( file_exists( $path ) ) {
 		require_once $path;
