@@ -56,6 +56,13 @@ abstract class Field {
 	abstract protected function _sub_init();
 
 	/**
+	 * Method to allow set up of hooks
+	 *
+	 * @return void
+	 */
+	protected function _setup_hooks() {}
+
+	/**
 	 * Field class constructor. This is a final method as child classes should have no need to override this.
 	 *
 	 * @param string $id Unique ID of the field
@@ -79,6 +86,11 @@ abstract class Field {
 		 * Run child class initialization stuff
 		 */
 		$this->_sub_init();
+
+		/*
+		 * Set up hooks
+		 */
+		$this->_setup_hooks();
 	}
 
 	/**
@@ -101,6 +113,23 @@ abstract class Field {
 	 */
 	private function _pre_flight() {
 		$this->_field['class'] = implode( ' ', $this->_field['class'] );
+	}
+
+	/**
+	 * Returns the short name of current class
+	 *
+	 * @param boolean $for_hook Set this to TRUE if class name is needed for use in hook name
+	 * @return string Short name of current class
+	 */
+	final protected function _get_class_name( $for_hook = false ) {
+		$class_name = explode( '\\', get_called_class() );
+		$class_name = array_pop( $class_name );
+
+		if ( $for_hook === true ) {
+			$class_name = str_replace( '_', '-', strtolower( $class_name ) );
+		}
+
+		return $class_name;
 	}
 
 	/**

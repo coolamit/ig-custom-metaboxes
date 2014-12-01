@@ -114,7 +114,13 @@ class Text_Field extends Field {
 
 		unset( $this->_field['required'], $this->_field['readonly'], $this->_field['disabled'] );
 
-		return iG_Metabox_Helper::render_template( IG_CUSTOM_METABOXES_ROOT . '/templates/field-ui/input.php', array(
+		//allow template file override
+		$template = apply_filters(
+						sprintf( 'ig-cmf-template-%s', $this->_get_class_name( true ) ),
+						IG_CUSTOM_METABOXES_ROOT . '/templates/field-ui/input.php'
+					);
+
+		return iG_Metabox_Helper::render_template( $template, array(
 			'attributes'   => $this->_field,
 			'label'        => $label,
 			'description'  => $description,
