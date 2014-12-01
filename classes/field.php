@@ -15,6 +15,7 @@ abstract class Field {
 	protected $_field = array(
 		'type'     => 'text',
 		'value'    => '',
+		'class'    => array(),
 		'required' => false,
 		'readonly' => false,
 		'disabled' => false,
@@ -94,6 +95,15 @@ abstract class Field {
 	}
 
 	/**
+	 * Pre-render data preparation etc.
+	 *
+	 * @return void
+	 */
+	private function _pre_flight() {
+		$this->_field['class'] = implode( ' ', $this->_field['class'] );
+	}
+
+	/**
 	 * Set description of the field
 	 *
 	 * @param string $description
@@ -136,7 +146,23 @@ abstract class Field {
 			throw new \ErrorException( 'Metabox field CSS class needs to be a string' );
 		}
 
-		$this->_field['class'] = $class;
+		$this->set_css_classes( explode( ' ', $class ) );
+
+		return $this;
+	}
+
+	/**
+	 * Set CSS classes for the field. Multiple classes can be set by passing them in an array.
+	 *
+	 * @param array $classes
+	 * @return iG\Metabox\Field
+	 */
+	public function set_css_classes( array $classes ) {
+		if ( empty( $classes ) || ! is_array( $classes ) ) {
+			throw new \ErrorException( 'Multiple metabox field CSS classes must be passed as an array' );
+		}
+
+		$this->_field['class'] = array_filter( array_unique( array_merge( $this->_field['class'], $classes ) ) );
 
 		return $this;
 	}
@@ -251,6 +277,8 @@ abstract class Field {
 		if ( ! is_callable( $this->_render['callback'] ) ) {
 			throw new \ErrorException( sprintf( 'Meta field render callback defined for field %s is uncallable', $this->get_id() ) );
 		}
+
+		$this->_pre_flight();
 
 		return call_user_func_array( $this->_render['callback'], $args );
 	}
