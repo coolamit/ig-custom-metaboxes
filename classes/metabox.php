@@ -236,6 +236,7 @@ class Metabox {
 	 */
 	public function add() {
 		$this->_validate();
+		iG_Metabox_Helper::setup_hooks();
 
 		sort( $this->_post_types );
 
