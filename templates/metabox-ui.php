@@ -11,7 +11,7 @@
 <?php
 foreach ( $fields as $field ) {
 ?>
-	<p><?php echo $field->render( $post_id ); ?></p>
+	<p><?php $field->render( $post_id ); ?></p>
 <?php
 }
 ?>

@@ -309,7 +309,7 @@ abstract class Field {
 
 		$this->_pre_flight();
 
-		return call_user_func_array( $this->_render['callback'], $args );
+		echo call_user_func_array( $this->_render['callback'], $args );
 	}
 
 	/**
