@@ -314,7 +314,7 @@ class Metabox {
 			$data = '';
 
 			if ( isset( $_POST[ $field_id ] ) ) {
-				$data = $_POST[ $field_id ];
+				$data = $field->sanitize_data( $_POST[ $field_id ] );
 			}
 
 			$field->save_data( $post_id, $data );
