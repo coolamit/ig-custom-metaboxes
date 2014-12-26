@@ -1,4 +1,4 @@
-## iG:Custom Metaboxes v1.0 Beta
+## iG:Custom Metaboxes v1.0 RC1
 ---------------------------------
 
 WordPress plugin to provide an object oriented and clean API for creating custom meta-boxes.
