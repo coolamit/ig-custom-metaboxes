@@ -25,6 +25,7 @@ class Metabox {
 		'title'    => 'iG Metabox',
 		'context'  => 'normal',
 		'priority' => 'default',
+		'class'    => '',
 	);
 
 	/**
