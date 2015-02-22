@@ -14,6 +14,7 @@ var ig_cmf = {
 		var $color = $field.val();
 
 		if ( $color ) {
+			//all good, update text to selected color's hex value
 			$field.parent().find( '.ig-cmf-input-color-code' ).text( $color.toUpperCase() );
 		}
 	}
@@ -21,6 +22,7 @@ var ig_cmf = {
 
 jQuery( document ).ready( function( $ ) {
 
+	//if a new color is selected then we would want to update the hex value we show
 	$( '.ig-cmf-input-color' ).on( 'change', function() {
 		ig_cmf.update_color_code( $( this ) );
 	} );
