@@ -1,6 +1,6 @@
 === iG:Custom Metaboxes ===
 Contributors: amit
-Tags: meta, metabox, admin, library, custom field, form
+Tags: meta, metabox, admin, library, custom field, form, custom metadata, custom post types, metabox, metadata, post meta, postmeta
 Requires at least: 4.0
 Tested up to: 4.1.1
 Stable tag: trunk
