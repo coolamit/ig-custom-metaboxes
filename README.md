@@ -7,6 +7,8 @@
 - WordPress 4.0 or above
 - PHP 5.4 or above
 
+**WordPress.org:** [http://wordpress.org/plugins/ig-custom-metaboxes/](http://wordpress.org/plugins/ig-custom-metaboxes/)
+
 This plugin is more or less a library which is meant to be used in other plugins or themes. On its own this plugin does nothing, it has no UI nor any configuration to be set/tweaked. This plugin allows addition of HTML5 fields however the functionality of specialized fields like color picker, date picker etc. is browser dependent. The plugin does not add any JavaScript to make these fields compatible with browsers which don't support HTML5 or which don't add functionality to these specialized fields.
 
 A new metabox is created by creating a new object of ```iG\Metabox\Metabox``` class. Form field objects are added to metabox object to create the metabox UI.

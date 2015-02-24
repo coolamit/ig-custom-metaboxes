@@ -109,9 +109,6 @@ By all means, feel free to submit a pull request.
 
 Please feel free to suggest a new feature. Its inclusion might be speedier if you can provide the code to make it work.
 
-== Screenshots ==
-
-
 == ChangeLog ==
 
 = v1.0 =
